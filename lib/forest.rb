@@ -16,9 +16,10 @@ class Forest
       new_row = []
       row.each do |cell|
         new_state = find_new_state(cell)
-        new_cell = Cell.new(new_state)
+        new_cell = Cell.new(new_state, cell.coords)
         new_row << new_cell
       end
+      new_grid << new_row
     end
     @grid = new_grid
   end

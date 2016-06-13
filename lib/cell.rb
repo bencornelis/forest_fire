@@ -1,5 +1,5 @@
 class Cell
-  attr_reader :state, :x, :y
+  attr_reader :state, :x, :y, :coords
 
   def initialize(state = nil, coords)
     if state
@@ -7,8 +7,9 @@ class Cell
     else
       @state = (rand < 0.5 ? :empty : :tree )
     end
-    @coords[:x] = x
-    @coords[:y] = y
+    @coords = coords
+    @x = coords[:x]
+    @y = coords[:y]
   end
 
   def symbol
@@ -34,9 +35,9 @@ class Cell
   private
   def dict
     {
-      :burning : "b",
-      :tree    : "t",
-      :empty   : " "
+      :burning => "b",
+      :tree    => "t",
+      :empty   => " "
     }
   end
 end
