@@ -1,5 +1,5 @@
-require "./cell"
-require "./forest"
+require_relative "cell"
+require_relative "forest"
 
 # p - probability an empty space fills with a tree
 # f - probability an isolated tree ignites
