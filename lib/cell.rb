@@ -1,15 +1,14 @@
 class Cell
   attr_reader :state, :x, :y, :coords
 
-  def initialize(state = nil, coords)
-    if state
-      @state = state
+  def initialize(params = {})
+    if params[:state]
+      @state = params[:state]
     else
       @state = (rand < 0.5 ? :empty : :tree )
     end
-    @coords = coords
-    @x = coords[:x]
-    @y = coords[:y]
+    @x = params[:x]
+    @y = params[:y]
   end
 
   def symbol

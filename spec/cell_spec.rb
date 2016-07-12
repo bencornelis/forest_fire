@@ -13,9 +13,9 @@ describe Cell do
     end
   end
 
-  let(:empty_cell)   { Cell.new(:empty) }
-  let(:tree_cell)    { Cell.new(:tree) }
-  let(:burning_cell) { Cell.new(:burning) }
+  let(:empty_cell)   { Cell.new(state: :empty) }
+  let(:tree_cell)    { Cell.new(state: :tree) }
+  let(:burning_cell) { Cell.new(state: :burning) }
 
   describe "#empty?" do
     it "is true if the cell is empty" do

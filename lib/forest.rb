@@ -1,12 +1,12 @@
 class Forest
   attr_reader :p, :f, :size, :grid
 
-  def initialize(attr)
+  def initialize(params)
     # p - probability an empty space fills with a tree
     # f - probability an isolated tree ignites
-    @p = attr[:p]
-    @f = attr[:f]
-    @size = attr[:size]
+    @p = params[:p]
+    @f = params[:f]
+    @size = params[:size]
     populate_grid
   end
 
@@ -16,7 +16,7 @@ class Forest
       new_row = []
       row.each do |cell|
         new_state = find_new_state(cell)
-        new_cell = Cell.new(new_state, cell.coords)
+        new_cell = Cell.new(state: new_state, x: cell.x, y: cell.y)
         new_row << new_cell
       end
       new_grid << new_row
